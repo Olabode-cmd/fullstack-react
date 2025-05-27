@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 body {
     font-family: "Inter", sans-serif;
 }
@@ -13,7 +14,7 @@ img {
 }
 
 /* Navbar */
-.signup-btn {
+/* .signup-btn {
     color: black;
     background: transparent;
     border: none;
@@ -59,10 +60,10 @@ img {
 
 .logo {
     margin-right: 25px;
-}
+} */
 
 /* Header Section */
-.hero-section {
+/* .hero-section {
     min-height: 80vh;
     padding: 40px 24px;
     width: 100%;
@@ -82,10 +83,10 @@ img {
     font-size: 20px;
     margin-top: 15px;
     color: #333;
-}
+} */
 
 /* Search input */
-.relative {
+/* .relative {
     position: relative;
 }
 
@@ -118,9 +119,9 @@ img {
     font-size: 25px;
     margin-top: 2px;
     color: white;
-}
+} */
 /* Trending searches */
-.trending-searches {
+/* .trending-searches {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -137,10 +138,10 @@ img {
     border-radius: 16px;
     font-size: 14px;
     color: #555;
-}
+} */
 
 /* Footer */
-footer {
+/* footer {
     background: rgb(1, 1, 65);
     padding: 15px 15px;
     width: 100%;
@@ -165,7 +166,7 @@ footer button {
     padding: 12px 15px;
     border-radius: 28px;
     border: none;
-}
+} */
 
 /* .red {
     background: rgba(255, 0, 0, 0.527);
