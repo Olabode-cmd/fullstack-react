@@ -37,8 +37,7 @@ const Login = () => {
                   {/* <input */}
 
                   <div className="space-y-2 text-center mt-4 text-sm">
-                    <Link to='/' className="text-blue-600 text-base block">Login with passkey</Link>
-                    <Link to='/' className="text-blue-600 text-base">Login with Single Sign-On (SSO)</Link>
+                    <Link to='/create-account' className="text-blue-600 text-base block">Don't have an account? Sign up here.</Link>
                   </div>
                 </div>
               </form>

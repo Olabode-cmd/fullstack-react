@@ -11,7 +11,7 @@ import FindJobs from './pages/findjobs.jsx'
 import Designer from './pages/designer.jsx'
 
 import Login from './pages/auth/login.jsx'
-import SignUP from './pages/auth/signup.jsx'
+import Signup from './pages/auth/signup.jsx'
 
 const root = document.getElementById("root");
 
@@ -27,7 +27,7 @@ ReactDOM.createRoot(root).render(
       <Route path='/explore' element={<Explore />} />
 
       <Route path='/login' element={<Login />} />
-      <Route path='/signup' element={<SignUP />} />
+      <Route path='/create-account' element={<Signup />} />
     </Routes>
   </BrowserRouter>
 )
