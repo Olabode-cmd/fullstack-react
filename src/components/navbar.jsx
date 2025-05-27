@@ -10,22 +10,35 @@ const Navbar = () => {
 
           <ul className="nav-links">
             <li>
-              <Link to="#" className="link">Explore</Link>
+              <Link to="/explore" className="link">
+                Explore
+              </Link>
             </li>
             <li>
-              <Link to="#" className="link">Hire a designer</Link>
+              <Link to="/designer" className="link">
+                Hire a designer
+              </Link>
             </li>
             <li>
-              <Link to="#" className="link">Find Jobs</Link>
+              <Link to="/find-jobs" className="link">
+                Find Jobs
+              </Link>
             </li>
             <li>
-              <Link to="#" className="link">Privacy Policy</Link>
+              <Link to="/privacy" className="link">
+                Privacy Policy
+              </Link>
             </li>
           </ul>
         </div>
+
         <div>
-          <button className="signup-btn">Sign up</button>
-          <button className="login-btn">Log in</button>
+          <Link to="/login" className="signup-btn">
+            Sign up
+          </Link>
+          <Link to="/signup" className="login-btn">
+            Log in
+          </Link>
         </div>
       </nav>
     );
