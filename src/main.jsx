@@ -9,6 +9,7 @@ import Privacy from './pages/privacy.jsx'
 import FindJobs from './pages/findjobs.jsx'
 import Designer from './pages/designer.jsx'
 import Cart from './pages/cart.jsx'
+import Products from './pages/products.jsx'
 
 import Login from './pages/auth/login.jsx'
 import Signup from './pages/auth/signup.jsx'
@@ -24,6 +25,7 @@ ReactDOM.createRoot(root).render(
       <Route path='/about' element={<About />} />
       <Route path='/profile' element={<Profile />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/products' element={<Products />} />
       
 
       <Route path='/login' element={<Login />} />

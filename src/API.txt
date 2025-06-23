@@ -1,0 +1,171 @@
+API (Application Programming Interface)
+
+An API is a set of rules and protocols for building and interacting with software applications.
+It defines the methods and data formats that applications can use to communicate with each other.
+
+An API endpoint is a specific URL where an API can be accessed by applications/platforms/software.
+API Endpoints have 5 major methods.
+
+API Methods:
+
+1. GET: Retrieve data from a server.
+   - Example: Fetching user information from a database.
+
+2. POST: Send data to a server to create resource.
+   - Example: Submitting a form to create a new user account/ logging in.
+
+3. PUT: Update an existing resource on the server.
+    - Example: Modifying user details in the database.
+
+4. PATCH: Apply partial modifications to a resource.
+   - Example: Changing only the email address of a user.
+
+5. DELETE: Remove a resource from the server.
+   - Example: Deleting a user account from the database.
+
+When you're interacting with an API you typically send and receive data in JSON format.
+JSON means Javascript Object Notation, and it is a lightweight data interchange 
+format that is easy to read and write for humans and machines.
+
+JSON Example:
+
+{
+  "name": "John Doe",
+  "email": "johndoe@gmail.com",
+}
+
+{
+    "username": "johndoe",
+    "password": "securepassword123",
+}
+
+SAMPLE RESPONSES
+
+GET request - getting the books in a library
+
+Response:
+{
+  "books": [
+      {
+        "id": 1,
+        "title": "1984",
+        "author": "George Orwell",
+        "available": true
+      },
+      {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee Smith"
+        "available": false
+      },
+        {
+            "id": 3,
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "available": true
+        },
+        {
+            "id": 4,
+            "title": "1984",
+            "author": "George Orwell",
+            "available": true  
+        }
+    ]
+}
+
+Array stores multiple data separeated by a comma
+Objects stores multiple data by assigning a unique key to each value
+
+const person: {
+    name: "Esosa",
+    age: 25,
+    isStudent: true,
+    hobbies: ["reading", "coding", "gaming"],    
+}
+
+const person2: {
+    name: "John",
+    age: 30,
+    isStudent: false,
+    hobbies: ["cooking", "traveling"],
+}
+
+const person3: {
+    name: "Jane",
+    age: 22,
+    isStudent: true,
+    hobbies: ["painting", "dancing"],
+}
+
+const students = [person, person2, person3];
+
+
+POST request 
+
+{
+    "title": "1984",
+    "author": "George Orwell",
+    "available": true  
+}
+
+const booksToAdd = [
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "available": true  
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "available": false  
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "available": true  
+    }
+]
+
+Sample book
+
+{
+    "id": 2,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "available": false
+}
+Assuming the author changed their name to Harper Lee Smith
+
+PUT Request - sample
+{
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee Smith",
+    "available": false
+}
+
+PATCH Request - sample
+{
+    "author": "Harper Lee Smith"
+}
+
+DELETE Request - sample
+
+STATUS CODES
+
+Responses from a server will typically have an status code that gives us an idea of what the response is.
+
+Status codes are grouped into five categories:
+1. Informational (100-199): Indicates that the request was received and is being processed.
+   - Example: 100 Continue
+
+2. Success (200-299): Indicates that the request was successful.
+   - Example: 200 OK, 201 Created
+
+3. Redirection (300-399): Indicates that further action is needed to complete the request.
+   - Example: 301 Moved Permanently, 302 Found
+
+4. Client Error (400-499): Indicates that there was an error with the request made by the client.
+   - Example: 400 Bad Request, 401 Unauthorized, 404 Not Found
+
+5. Server Error (500-599): Indicates that there was an error on the server while processing the request.
+   - Example: 500 Internal Server Error, 502 Bad Gateway
