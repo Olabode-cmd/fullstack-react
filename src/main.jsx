@@ -14,6 +14,9 @@ import Products from './pages/products.jsx'
 import Login from './pages/auth/login.jsx'
 import Signup from './pages/auth/signup.jsx'
 
+import BlogPage from './pages/blogpost.jsx'
+import BlogDetails from './pages/[blogId].jsx'
+
 import LoginAssignment from './pages/login.jsx'
 
 const root = document.getElementById("root");
@@ -26,6 +29,8 @@ ReactDOM.createRoot(root).render(
       <Route path='/profile' element={<Profile />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/products' element={<Products />} />
+      <Route path='/blog' element={<BlogPage />} />
+      <Route path='/posts/:id' element={<BlogDetails />} />
       
 
       <Route path='/login' element={<Login />} />
