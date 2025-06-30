@@ -7,7 +7,7 @@ const BlogPost = (props) => {
                 <img src={props.image} alt="Blog post image" className="w-full h-48 object-cover" />
 
                 <div className="content">
-                    <h1 className="font-bold text-2xl text-gray-950 mb-2">{props.title}</h1>
+                    <h1 className="font-bold text-2xl text-gray-900 mb-2">{props.title}</h1>
                     <p className="text-gray-700 mb-4">{props.description}</p>
 
                     <div className="flex gap-x-3 items-center">
