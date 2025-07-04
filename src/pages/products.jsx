@@ -1,7 +1,20 @@
 import { useState, useEffect } from 'react';
 import ProductCard from '../components/productcard';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
+
+    const token = localStorage.getItem('token');
+    if (!token) {
+        return (
+            <div className="max-w-7xl mx-auto px-4 py-8">
+                <h1 className="text-red-600">You are not authorized to view this page.</h1>
+                <p>Please log in to access the products.</p>
+                <Link to="/login" className="text-blue-500 hover:underline">Login</Link>
+            </div>
+        )
+    }
+
     const [products, setProducts] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

@@ -33,7 +33,7 @@ const BlogPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {
-                    posts.map((post) => (
+                    posts.map((post, index) => (
                         <BlogPost 
                             key={post.id}
                             id={post.id}

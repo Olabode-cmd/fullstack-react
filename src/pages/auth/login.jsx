@@ -1,8 +1,57 @@
-import Image from '../../assets/image.jpg'
-import Paystack from '../../assets/paystack.svg'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FaSpinner } from 'react-icons/fa';
+import Paystack from '../../assets/paystack.svg';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = {
+      username: username,
+      password: password
+    }
+
+    try {
+      const response = await fetch('https://dummyjson.com/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Authorization': `Bearer ${localStorage.getItem('token')}` // Assuming you store the token in localStorage
+        },
+        body: JSON.stringify(formData)
+      })
+
+      // 405 : Method Not Allowed
+      // 401 : Unauthorized
+      // 403 : Forbidden or Access Denied
+
+      if (!response.ok){
+        throw new Error('Login failed. Please check your credentials.');
+      }
+
+      const data = await response.json();
+      localStorage.setItem('token', data.accessToken)
+      toast.success('Login successful!');
+      navigate('/products');
+    } catch (error) {
+      console.error('Error:', error);
+      setError(error.message);
+      toast.error(`Error: ${error.message}`);
+    } finally {
+      setLoading(false)
+    }
+  }
+
     return (
       <>
         <div className="w-full min-h-screen bg-[#0D2A45]">
@@ -12,15 +61,18 @@ const Login = () => {
             </div>
 
             <div className="bg-white py-6 px-8 w-full mt-5 rounded-md">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <h1 className="uppercase text-center text-gray-700 font-light text-md">
                   log into your account
                 </h1>
 
                 <div className="space-y-4 mt-10">
                   <input
-                    type="email"
-                    placeholder="Email address"
+                    type="text"
+                    placeholder="Username"
+                    value={username}
+                    
+                    onChange={(e) => setUsername(e.target.value)}
                     className="w-full text-sm px-4 py-3 border border-gray-200 rounded-sm focus:outline-none"
                     required
                   />
@@ -28,11 +80,23 @@ const Login = () => {
                   <input
                     type="password"
                     placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="w-full text-sm px-4 py-3 border border-gray-200 rounded-sm focus:outline-none"
                     required
                   />
 
-                  <button className="bg-[#6CC986] px-3 py-3 text-base text-white border-none w-full rounded-md">Login</button>
+                  <button type="submit" className="bg-[#6CC986] px-3 py-3 text-base text-white border-none w-full rounded-md">
+                    {loading ? (
+                      <div className="flex items-center justify-center">
+                        <FaSpinner className="animate-spin text-white" />
+                      </div>
+                    ) : (
+                      'Login'
+                    )}
+                  </button>
+
+                  {/* condition ? "" : ""  -- ternary operator*/}
 
                   {/* <input */}
 

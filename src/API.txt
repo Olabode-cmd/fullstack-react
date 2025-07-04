@@ -169,3 +169,9 @@ Status codes are grouped into five categories:
 
 5. Server Error (500-599): Indicates that there was an error on the server while processing the request.
    - Example: 500 Internal Server Error, 502 Bad Gateway
+
+
+
+LOGIN REQUESTS  
+
+When you 
