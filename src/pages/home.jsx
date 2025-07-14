@@ -8,7 +8,7 @@ const Homepage = () => {
     navigate('/login')
   }, [])
     
-  return null
+  return null;
 }
 
 export default Homepage;

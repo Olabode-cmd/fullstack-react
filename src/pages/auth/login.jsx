@@ -39,10 +39,14 @@ const Login = () => {
         throw new Error('Login failed. Please check your credentials.');
       }
 
+      // 200: Successful
+      // 201: created
+      
+
       const data = await response.json();
       localStorage.setItem('token', data.accessToken)
       toast.success('Login successful!');
-      navigate('/products');
+      navigate('/profile');
     } catch (error) {
       console.error('Error:', error);
       setError(error.message);
